@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Football Scoreboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <audio id="goalSound" src="goal.m4a" preload="auto"></audio>
+
+    <div class="container">
+        <h1>Live Football Scoreboard</h1>
+        <button id="darkModeToggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+        <!-- Team Name Inputs -->
+        <div class="team-inputs">
+            <input type="text" id="teamAName" placeholder="Team A Name" />
+            <input type="text" id="teamBName" placeholder="Team B Name" />
+            <button onclick="startMatch()">Start Match</button>
+        </div>
+
+        <!-- Scoreboard Section -->
+        <div class="scoreboard hidden" id="scoreboard">
+            <div class="team">
+                <h2 id="displayTeamA">Team A</h2>
+                <div class="score-controls">
+                    <button onclick="changeScore('A', 1)">+</button>
+                    <span id="scoreA">0</span>
+                    <button onclick="changeScore('A', -1)">−</button>
+                </div>
+                <p>Fouls: <span id="foulsA">0</span></p>
+                <button onclick="addFoul('A')">Add Foul</button>
+            </div>
+
+            <div class="timer">
+                <h2>Match Timer</h2>
+                <p id="timerDisplay">00:00</p>
+                <button onclick="toggleTimer()">Start/Pause</button>
+                <button onclick="resetTimer()">Reset Timer</button>
+            </div>
+
+            <div class="team">
+                <h2 id="displayTeamB">Team B</h2>
+                <div class="score-controls">
+                    <button onclick="changeScore('B', 1)">+</button>
+                    <span id="scoreB">0</span>
+                    <button onclick="changeScore('B', -1)">−</button>
+                </div>
+                <p>Fouls: <span id="foulsB">0</span></p>
+                <button onclick="addFoul('B')">Add Foul</button>
+            </div>
+        </div>
+
+        <!-- Match Control Buttons -->
+        <div class="match-controls hidden" id="matchControls">
+            <button onclick="resetMatch()">Reset Match</button>
+            <button onclick="saveResult()">Save Match Result</button>
+            <div id="savedMatches" class="saved-matches"></div>
+            <button class="csv-btn" onclick="exportCSV()">Export as CSV</button>
+            <button onclick="clearSaved()">Clear Saved Matches</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

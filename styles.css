@@ -1,0 +1,332 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeInBody 2s ease-in-out;
+}
+
+@keyframes fadeInBody {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    animation: scaleUp 1s ease;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px #00ffcc;
+    }
+
+    50% {
+        text-shadow: 0 0 20px #00ffcc;
+    }
+}
+
+/* Team Inputs */
+.team-inputs input {
+    padding: 0.6rem 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    transition: box-shadow 0.3s;
+}
+
+.team-inputs input:focus {
+    box-shadow: 0 0 10px #00ffd5;
+}
+
+.team-inputs button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    background-color: #00ffd5;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+    animation: bounceIn 0.8s;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.team-inputs button:hover {
+    background-color: #00ccaa;
+    transform: scale(1.05);
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Scoreboard */
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 2rem;
+    animation: fadeIn 1s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.team {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 40%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.team h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.score-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.score-controls button {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease;
+}
+
+.score-controls button:hover {
+    background: #00ffd5;
+    transform: scale(1.2);
+}
+
+/* Timer */
+.timer {
+    text-align: center;
+    max-width: 200px;
+    margin-top: 2rem;
+}
+
+#timerDisplay {
+    font-size: 2rem;
+    margin: 1rem 0;
+    animation: glowTimer 2s infinite alternate;
+}
+
+@keyframes glowTimer {
+    from {
+        text-shadow: 0 0 10px #00ffd5;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00fff7;
+    }
+}
+
+.timer button {
+    padding: 0.4rem 1rem;
+    margin: 0.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #00ffd5;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+.timer button:hover {
+    transform: scale(1.1);
+}
+
+/* Match Controls */
+.match-controls {
+    margin-top: 2rem;
+}
+
+.match-controls button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background: #ff0055;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    animation: pulseButton 2s infinite;
+}
+
+.csv-btn {
+    margin-top: 20px;
+}
+
+@keyframes pulseButton {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #ff0055;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ff3366;
+    }
+}
+
+.saved-matches {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 1rem;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    animation: fadeIn 1s ease;
+}
+
+.saved-matches ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.saved-matches li {
+    padding: 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#darkModeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.dark-mode {
+    background: linear-gradient(to right, #000000, #1a1a1a, #333333);
+    color: #e0e0e0;
+}
+
+.dark-mode .container {
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode input,
+.dark-mode button {
+    background-color: #444 !important;
+    color: #fff !important;
+}
+
+
+@media (max-width: 768px) {
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team {
+        width: 90%;
+        margin-bottom: 1.5rem;
+    }
+
+    .timer {
+        margin-top: 1rem;
+    }
+
+    .match-controls,
+    .saved-matches,
+    #darkModeToggle {
+        width: 100%;
+        text-align: center;
+    }
+
+    .team-inputs input {
+        width: 90%;
+        margin-bottom: 0.5rem;
+    }
+}
